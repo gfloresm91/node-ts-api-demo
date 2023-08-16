@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
 import cors from 'cors';
-// import db from '../db/connection.db';
+import db from '../db/data-source';
 
 import userRoutes from '../routes/user.route';
 
@@ -15,23 +15,29 @@ class Server {
         this.app = express();
         this.port = process.env.PORT || '8000';
         
-        // this.dbConnection();
+        this.dbConnection();
         this.middlewares();
         this.routes();
     }
 
-    // async dbConnection() {
-    //     try {
-    //         await db.authenticate();
-    //         console.log('Connection has been established succesfully');
-    //     } catch (error) {
-    //         throw new Error('Unable to connect to the database');
-    //     }
-    // }
+    async dbConnection() {
+        try {
+            await db.initialize()
+                .then(() => {
+                    console.log("Data Source has been initialized!")
+                })
+                .catch((err) => {
+                    console.error("Error during Data Source initialization", err)
+                })
+        } catch (error) {
+            throw new Error('Unable to connect to the database');
+        }
+    }
 
     middlewares() {
         this.app.use(cors());
         this.app.use(express.json());
+        this.app.use(express.static('public'));
     }
 
     routes() {

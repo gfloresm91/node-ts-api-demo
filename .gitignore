@@ -1,7 +1,12 @@
-node_modules
-.vscode
-.env
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+build
 .eslintignore
 .eslintrc.json
 tsconfig.json
-dist
+.env
+src/db/database.sqlite
