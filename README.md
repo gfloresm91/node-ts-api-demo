@@ -44,22 +44,26 @@ Here you found a interactive documentation with a public postman project
 https://documenter.getpostman.com/view/6342282/2s9Y5VTP5g
 
 ### Get all users
+---
 
-GET
+Method: GET
 
-{{url}}/api/users
+URL: {{url}}/api/users
+
 
 ### Get user
+---
 
-GET
+Method: GET
 
-{{url}}/api/users/:id
+URL: {{url}}/api/users/:id
 
 ### Post user
+---
 
-POST
+Method: POST
 
-{{url}}/api/users
+URL: {{url}}/api/users
 
 ```json
 {
@@ -70,10 +74,11 @@ POST
 ```
 
 ### Update user
+---
 
-PUT
+Method: PUT
 
-{{url}}/api/users/:id
+URL: {{url}}/api/users/:id
 
 ```json
 {
@@ -84,10 +89,11 @@ PUT
 ```
 
 ### Delete user
+---
 
-DELETE
+Method: DELETE
 
-{{url}}/api/users/2
+URL: {{url}}/api/users/2
 
 ## How to use
 
